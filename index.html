@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101b16">
+<meta name="description" content="Happy Hour no Garden Café: drinks, petiscos, chopp, jardim e encontros em Jundiaí. Solicite sua mesa pelo WhatsApp.">
+<title>Happy Hour | Garden Café Jundiaí — V11 Cinematic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#101b16;--off:#efece3;--gold:#d4ba8b;--white:#fffdf5;--muted:#bfc8c0;--ease:cubic-bezier(.22,1,.36,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:50px}body{margin:0;background:var(--bg);color:var(--off);font-family:'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block}button{font:inherit}a:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.skip-link{position:fixed;top:-100px;left:15px;z-index:99;background:white;color:#111;padding:12px}.skip-link:focus{top:15px}
+.progress{position:fixed;left:0;top:0;width:0;height:2px;background:#e1c59a;z-index:55;pointer-events:none}
+.navbar{position:fixed;z-index:50;top:clamp(16px,3vw,30px);right:clamp(18px,5vw,70px);display:flex;gap:13px;align-items:center}
+.navbar .mini{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#f9f3e6;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:13px;padding:17px 25px;background:var(--off);color:#15221a;border:1px solid transparent;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;transition:transform .25s,background .25s;border-radius:3px}
+.button:hover{background:#fff;transform:translateY(-2px)}
+.button.arrow span{font-size:17px;line-height:0;font-weight:400}
+.navbar .button{padding:12px 19px;background:rgba(244,239,229,.94);border-radius:50px;box-shadow:0 12px 35px rgba(0,0,0,.18)}
+
+/* Scene 1. The ORIGINAL PHOTO's backplate is stored locally, with the chair removed. */
+.hero-track{height:167svh;position:relative;background:#142019}
+.hero{position:sticky;top:0;height:100svh;min-height:560px;overflow:hidden;isolation:isolate;background:#15231b}
+.hero-bg{position:absolute;inset:-4%;background-image:url('assets/garden-fundo-original-sem-balanco.jpg');background-size:cover;background-position:52% 44%;transform:scale(1.06);will-change:transform;z-index:0}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,16,10,.79) 0%,rgba(7,13,9,.52) 45%,rgba(4,9,5,.14) 100%),linear-gradient(180deg,rgba(4,9,6,.32) 0%,transparent 38%,rgba(4,9,6,.47) 100%)}
+.hero-glow{position:absolute;inset:-15%;z-index:1;background:radial-gradient(ellipse at 57% 30%,rgba(255,224,164,.12),transparent 38%);mix-blend-mode:screen;pointer-events:none}
+.hero-swing-position{position:absolute;z-index:2;top:50%;left:55.5%;width:auto;height:min(78svh,850px);transform:translate(-50%,-50%);will-change:transform;pointer-events:none}
+.hero-swing-rotation{height:100%;width:auto;transform-origin:50% 6%;will-change:transform}
+.hero-swing-rotation img{width:auto;height:100%;max-width:none;object-fit:contain;filter:drop-shadow(18px 24px 22px rgba(0,0,0,.34))}
+/* Same transparent PNG, perfectly synchronized: upper flowers cross IN FRONT of Happy Hour. */
+.hero-swing-foreground{z-index:6;pointer-events:none}
+.hero-swing-foreground .hero-swing-rotation img{clip-path:inset(0 0 39% 0)}
+
+.hero-front-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(7,14,8,.32),transparent 60%),linear-gradient(180deg,rgba(1,9,4,.35),transparent 34%,transparent 72%,rgba(2,10,5,.42))}
+.hero-copy{position:absolute;z-index:5;top:50%;left:clamp(28px,7.7vw,145px);width:min(46vw,630px);transform:translateY(-41%);display:flex;flex-direction:column;align-items:flex-start;gap:0;will-change:opacity,transform}
+.brand-logo{width:clamp(110px,12vw,170px);height:auto;filter:drop-shadow(0 8px 20px rgba(0,0,0,.35))}
+.happy-logo{width:100%;max-width:610px;height:auto;margin:0 0 7px;filter:drop-shadow(0 9px 18px rgba(0,0,0,.36))}
+.hero-promo{font-family:'Manrope',Arial,sans-serif;font-size:clamp(17px,1.9vw,26px);line-height:1.21;letter-spacing:-.032em;font-weight:800;margin:10px 0 10px;color:#fffdf5;text-shadow:0 2px 14px rgba(0,0,0,.7)}
+.hero-promo strong{color:#73eb8a}
+.hero-subtitle{font-size:clamp(10px,1.1vw,13px);font-weight:700;letter-spacing:.23em;text-transform:uppercase;margin:5px 0 14px;color:#f1eadc;text-shadow:0 2px 12px rgba(0,0,0,.7)}
+.hero-tagline{font-size:clamp(12px,1.1vw,14px);line-height:1.6;color:rgba(255,255,255,.91);margin:0 0 20px;text-shadow:0 2px 15px rgba(0,0,0,.55)}
+.hero-bottom{position:absolute;z-index:7;bottom:clamp(24px,5vh,50px);left:clamp(28px,7.7vw,145px);right:clamp(28px,7.7vw,145px);display:flex;align-items:center;justify-content:space-between;gap:10px;text-transform:uppercase;letter-spacing:.24em;font-size:10px;color:rgba(255,255,255,.79);pointer-events:none}
+.hero-bottom .down:after{content:"";display:block;height:28px;width:1px;background:rgba(255,255,255,.5);margin:12px auto 0}
+
+/* Scene 2. Grouped drinks + hands share one transparent layer, so anatomy stays intact. */
+.drink-track{height:160svh;position:relative;background:#101b16}
+.drink-scene{position:sticky;top:0;height:100svh;min-height:580px;overflow:hidden;isolation:isolate;background:#17241a}
+.drink-scene-back{position:absolute;inset:-8%;background-image:linear-gradient(90deg,rgba(5,14,9,.88),rgba(9,20,11,.50) 50%,rgba(5,14,9,.44)),url('https://gardenjundiai.com.br/img/gallery4-20260615185034-990a10.png'),url('assets/garden-fundo-original-sem-balanco.jpg');background-size:cover,cover,cover;background-position:center;transform:scale(1.08);will-change:transform;filter:saturate(.88)}
+.drink-scene-back::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 68% 63%,rgba(243,148,63,.18),transparent 43%),linear-gradient(0deg,rgba(3,9,5,.6),transparent 48%)}
+.drink-copy{position:absolute;z-index:4;top:50%;left:clamp(28px,8vw,150px);max-width:500px;transform:translateY(-38%)}
+.eyebrow{font-size:10px;letter-spacing:.27em;font-weight:700;text-transform:uppercase;color:#e7cba1}
+.drink-copy h2{font-family:'Manrope',Arial,sans-serif;font-size:clamp(43px,5.6vw,86px);line-height:1.03;letter-spacing:-.065em;margin:22px 0 24px}
+.drink-copy h2 em{font-style:normal;color:#efcc94}
+.drink-copy p{margin:0 0 33px;font-size:clamp(13px,1.3vw,17px);line-height:1.85;color:rgba(248,244,235,.9)}
+.drink-art-position{position:absolute;z-index:3;top:50%;left:72%;height:min(82svh,850px);width:auto;aspect-ratio:1122/1402;transform:translate(-50%,-50%);will-change:transform;pointer-events:none}
+.drink-art-motion{width:100%;height:100%;transform-origin:50% 65%;will-change:transform;filter:drop-shadow(0 32px 28px rgba(0,0,0,.27))}
+.drink-art-motion img{width:100%;height:100%;object-fit:contain}
+.drink-scene-shade{position:absolute;z-index:3;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(7,17,10,.35),transparent 65%)}
+
+/* Footer: only the information needed to act. */
+.final{background:#eee9dc;color:#1c2b21;padding:clamp(68px,9vw,130px) clamp(24px,7vw,110px) 35px}
+.final-inner{max-width:1050px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end}
+.final h2{font-family:'Manrope',Arial,sans-serif;font-size:clamp(38px,5.3vw,76px);line-height:1.05;letter-spacing:-.05em;margin:14px 0 0}
+.final .eyebrow{color:#5e6e58}
+.final-right{padding-bottom:5px}
+.final-right p{font-size:15px;line-height:1.9;color:#4f5a50;margin:0 0 25px;max-width:360px}
+.final .button{background:#253d2b;color:#fff;padding:18px 24px}
+.final .button:hover{background:#142b1a}
+.final-small{max-width:1050px;margin:65px auto 0;padding-top:22px;border-top:1px solid #c3c7bb;display:flex;justify-content:space-between;gap:25px;align-items:center;color:#526056;font-size:12px;line-height:1.7}
+.final-small a{text-decoration:underline;text-underline-offset:4px}
+.final-disclaimer{font-size:11px;color:#667266;margin-top:14px;line-height:1.65}
+
+@media (max-width:860px){
+ .navbar .mini{display:none}
+ .hero-track{height:144svh}
+ .hero{min-height:500px}
+ .hero-bg{background-position:51% center}
+ .hero-bg::after{background:linear-gradient(180deg,rgba(7,17,10,.62),rgba(6,13,8,.14) 44%,rgba(3,10,6,.45))}
+ .hero-swing-position{height:auto;width:min(85vw, 42svh);aspect-ratio:941/1672;left:50%;top:auto;bottom:13.5svh;transform:translateX(-50%)}
+ .hero-swing-rotation{width:100%;height:100%}
+ .hero-swing-rotation img{width:100%;height:100%;object-fit:contain}
+ .hero-swing-foreground .hero-swing-rotation img{clip-path:inset(0 0 81% 0)}
+ .hero-front-shade{background:linear-gradient(180deg,rgba(0,0,0,.47) 0%,rgba(0,0,0,.18) 35%,transparent 60%,rgba(2,9,4,.39) 100%)}
+ .hero-copy{top:clamp(100px,12svh,145px);left:0;right:0;width:100%;padding:0 14px;transform:none;align-items:center;text-align:center}
+ .brand-logo{width:clamp(102px,21vw,135px)}
+ .happy-logo{width:min(96vw,540px);margin-top:0;margin-bottom:4px}
+ .hero-promo{font-size:clamp(17px,4.6vw,21px);max-width:350px;margin:2px auto 10px}
+ .hero-subtitle{font-size:clamp(10px,2.6vw,12px);letter-spacing:.07em;margin:2px 0 6px}
+ .hero-tagline{font-size:12px;margin-bottom:16px}
+ .hero-copy .button{padding:14px 22px;border-radius:40px}
+ .hero-promo,.hero-subtitle,.hero-tagline{position:relative;isolation:isolate;text-shadow:0 2px 12px rgba(0,0,0,.9),0 3px 26px #000}
+ .hero-promo::before{content:"";position:absolute;z-index:-1;inset:-7px -12px;background:rgba(6,13,8,.57);border-radius:12px;backdrop-filter:blur(4px)}
+ .hero-bottom{left:22px;right:22px;bottom:28px;font-size:9px}
+ .drink-track{height:145svh}
+ .drink-scene{min-height:520px}
+ .drink-scene-back{background-image:linear-gradient(180deg,rgba(5,14,9,.63),rgba(5,14,9,.27) 42%,rgba(5,14,9,.50)),url('https://gardenjundiai.com.br/img/gallery4-20260615185034-990a10.png'),url('assets/garden-fundo-original-sem-balanco.jpg');background-position:center}
+ .drink-copy{z-index:6;top:12svh;left:0;right:0;max-width:none;text-align:center;transform:none;padding:0 22px}
+ .drink-copy h2{font-size:clamp(42px,11.5vw,70px);margin:16px auto 10px;max-width:480px}
+ .drink-copy p{margin-bottom:18px;font-size:14px}
+ .drink-copy .button{border-radius:40px;padding:14px 20px}
+ .drink-art-position{top:auto;left:50%;bottom:2.7svh;width:min(94vw, 59svh);height:auto;aspect-ratio:1122/1402;transform:translateX(-50%)}
+ .drink-art-motion,.drink-art-motion img{width:100%;height:100%}
+ .drink-scene-shade{background:linear-gradient(180deg,rgba(0,0,0,.28),transparent 35%)}
+ .final-inner{grid-template-columns:1fr;gap:28px}
+ .final-small{margin-top:45px;align-items:flex-start;flex-direction:column;gap:8px}
+}
+@media (max-width:390px){.happy-logo{width:94vw}.hero-copy{top:11.5svh}.hero-tagline{font-size:12px}.drink-copy{top:12svh}}
+@keyframes gardenReveal{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@media (prefers-reduced-motion:no-preference){
+ .hero-copy .intro{animation:gardenReveal .75s var(--ease) both}
+ .hero-copy .happy-logo{animation-delay:.20s}
+ .hero-copy .hero-promo{animation-delay:.58s}
+ .hero-copy .hero-subtitle{animation-delay:.77s}
+ .hero-copy .hero-tagline{animation-delay:.94s}
+ .hero-copy .button{animation-delay:1.10s}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-bg,.hero-swing-position,.hero-swing-rotation,.drink-scene-back,.drink-art-position,.drink-art-motion,.hero-copy{will-change:auto}.button{transition:none}}
+</style>
+</head>
+<body>
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<nav class="navbar" aria-label="Ações rápidas"><span class="mini">Jundiaí · SP</span><a class="button arrow" href="#reservar">Reservar <span aria-hidden="true">↗</span></a></nav>
+<main id="conteudo">
+<section class="hero-track" id="inicio" aria-label="Abertura Happy Hour Garden">
+  <div class="hero">
+    <div class="hero-bg" id="gardenBackground" aria-hidden="true"></div>
+    <div class="hero-glow" id="gardenGlow" aria-hidden="true"></div>
+    <div class="hero-swing-position" id="swingPosition" aria-hidden="true"><div class="hero-swing-rotation" id="swingRotation"><img src="assets/balanco-recortado.png" alt="" fetchpriority="high"></div></div>
+    <div class="hero-swing-position hero-swing-foreground" id="swingFrontPosition" aria-hidden="true"><div class="hero-swing-rotation" id="swingFrontRotation"><img src="assets/balanco-recortado.png" alt="" fetchpriority="high"></div></div>
+    <div class="hero-front-shade" aria-hidden="true"></div>
+    <div class="hero-copy" id="heroCopy">
+      <img class="happy-logo intro" src="assets/happy-hour-logo.png" alt="Garden Café — Happy Hour" width="2048" height="921" fetchpriority="high">
+      <p class="hero-promo intro">Venha <strong>celebrar</strong> com o nosso <strong>Happy Hour!</strong></p>
+      <p class="hero-subtitle intro">Drinks · Petiscos · Chopp · e muito mais.</p>
+      <p class="hero-tagline intro">Couvert artístico a partir das 20h.</p>
+      <a class="button arrow intro" href="#reservar">Reservar minha mesa <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="hero-bottom"><span>Garden Café · Jundiaí</span><span class="down">Role para descobrir</span></div>
+  </div>
+</section>
+<section class="drink-track" id="happy-hour" aria-label="Brinde e drinks do Happy Hour">
+  <div class="drink-scene">
+    <div class="drink-scene-back" id="drinkBackground" aria-hidden="true"></div>
+    <div class="drink-art-position" id="drinkPosition" aria-hidden="true"><div class="drink-art-motion" id="drinkMotion"><img src="assets/brinde-sem-marca.png" alt="" loading="lazy"></div></div>
+    <div class="drink-scene-shade"></div>
+    <div class="drink-copy" id="drinkCopy">
+      <span class="eyebrow">A experiência Garden</span>
+      <h2>Um brinde aos<br><em>bons momentos.</em></h2>
+      <p>Drinks, petiscos, chopp e boas companhias.</p>
+      <a class="button arrow" href="#reservar">Quero celebrar <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+<section class="final" id="reservar">
+ <div class="final-inner"><div><span class="eyebrow">Seu momento começa aqui</span><h2>Venha viver<br>o Happy Hour.</h2></div>
+ <div class="final-right"><p>Um jardim, bons drinks e a companhia certa. <strong>Couvert artístico a partir das 20h.</strong></p>
+ <a class="button arrow" href="https://wa.me/5511990183251?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20uma%20mesa%20para%20o%20Happy%20Hour%20do%20Garden." target="_blank" rel="noopener noreferrer">Solicitar mesa no WhatsApp <span aria-hidden="true">↗</span></a>
+ <div class="final-disclaimer">A reserva depende de confirmação da equipe do Garden.</div></div></div>
+ <div class="final-small"><span>R. Conrado Augusto Offa, 480 · Chácara Urbana, Jundiaí – SP</span><span><a href="https://maps.app.goo.gl/R26UudkhPBtkU8LV9" target="_blank" rel="noopener noreferrer">Como chegar ↗</a> &nbsp; · &nbsp; <a href="https://www.instagram.com/gardenjundiai/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></span></div>
+</section>
+</main>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const heroTrack=$('inicio'), drinkTrack=$('happy-hour');
+const swingPos=$('swingPosition'), swing=$('swingRotation'), swingFrontPos=$('swingFrontPosition'), swingFront=$('swingFrontRotation'), gardenBg=$('gardenBackground'), gardenGlow=$('gardenGlow'), heroCopy=$('heroCopy');
+const drinkPos=$('drinkPosition'), drinkMotion=$('drinkMotion'), drinkBg=$('drinkBackground'), drinkCopy=$('drinkCopy');
+const progress=$('progress');
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const mobile=()=>window.innerWidth<=860;
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+function scrollFraction(el){let span=el.offsetHeight-innerHeight;return span>0?clamp(-el.getBoundingClientRect().top/span):0}
+let start=0, lastP=-1;
+function update(now){
+ if(!start)start=now;
+ const p=scrollFraction(heroTrack), q=scrollFraction(drinkTrack);
+ // Anchor the original chair at its top point, as in the approved V4 motion.
+ const isMobile=mobile();
+ const swingCycle=isMobile?4600:5000;
+ const swingAmplitude=isMobile?3.2:2.5;
+ const angle=reduceMotion?0:Math.sin(2*Math.PI*(now-start)/swingCycle)*swingAmplitude;
+ const float=reduceMotion?0:Math.sin(2*Math.PI*(now-start)/swingCycle)*2.5;
+ const chairScale=isMobile?1+p*.025:1+p*.055, cameraDepth=1.06+p*.18;
+ if(!reduceMotion){
+  const sharedSwingMotion=`rotate(${angle.toFixed(3)}deg) translateY(${float.toFixed(2)}px)`;
+  swing.style.transform=sharedSwingMotion;
+  swingFront.style.transform=sharedSwingMotion;
+  // All hands and drinks move together; no broken or disconnected fingers.
+  const toast=Math.sin(2*Math.PI*(now-start)/(isMobile?5000:6100));
+  const toastAngle=toast*(isMobile?1:1.05);
+  const toastY=-toast*(isMobile?8:7);
+  drinkMotion.style.transform=`translate3d(0,${toastY.toFixed(2)}px,0) rotate(${toastAngle.toFixed(3)}deg)`;
+ }
+ const sharedSwingPosition=isMobile
+  ? `translate3d(-50%,${-p*9}px,0) scale(${chairScale.toFixed(4)})`
+  : `translate3d(-50%,calc(-50% - ${p*12}px),0) scale(${chairScale.toFixed(4)})`;
+ swingPos.style.transform=sharedSwingPosition;
+ swingFrontPos.style.transform=sharedSwingPosition;
+ gardenBg.style.transform=`scale(${cameraDepth.toFixed(4)}) translate3d(0,${-p*2.5}%,0)`;
+ gardenGlow.style.transform=`translateY(${-p*25}px)`;
+ heroCopy.style.opacity=String(1-p*.60);
+ if(!mobile()) heroCopy.style.transform=`translateY(calc(-41% - ${p*20}px))`;
+ else heroCopy.style.transform=`translateY(${-p*14}px)`;
+ drinkBg.style.transform=`scale(${(1.08+q*.12).toFixed(4)}) translateY(${-q*2.5}%)`;
+ drinkPos.style.transform=isMobile
+  ? `translate3d(-50%,${-q*10}px,0) scale(${(1+q*.025).toFixed(3)})`
+  : `translate3d(-50%,calc(-50% - ${q*15}px),0) scale(${(1+q*.04).toFixed(3)})`;
+ if(!mobile()) drinkCopy.style.transform=`translateY(calc(-38% - ${q*18}px))`;
+ else drinkCopy.style.transform=`translateY(${-q*12}px)`;
+ if(lastP!==window.scrollY){progress.style.width=`${((window.scrollY/(document.documentElement.scrollHeight-innerHeight))*100 || 0).toFixed(2)}%`;lastP=window.scrollY}
+ if(!reduceMotion)requestAnimationFrame(update);
+}
+requestAnimationFrame(update);
+if(reduceMotion){addEventListener('scroll',()=>update(performance.now()),{passive:true});addEventListener('resize',()=>update(performance.now()))}
+})();
+</script>
+</body>
+</html>
