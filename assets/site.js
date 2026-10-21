@@ -19,6 +19,9 @@
   gsap.fromTo('#swingMotion',{rotation:-2.5},{rotation:2.5,duration:2.8,ease:'sine.inOut',repeat:-1,yoyo:true});
   gsap.fromTo('#swingRope',{rotation:-2.5},{rotation:2.5,duration:2.8,ease:'sine.inOut',repeat:-1,yoyo:true});
 
+  // A slow, restrained floating motion gives the drink artwork a little life.
+  gsap.to('.drink-motion',{y:-12,rotation:1.1,duration:3.4,ease:'sine.inOut',repeat:-1,yoyo:true});
+
   mm.add('(min-width: 861px)',()=>{
     gsap.fromTo('#heroPhoto',{scale:1.04,yPercent:0},{scale:1.14,yPercent:4,ease:'none',scrollTrigger:{trigger:'#inicio',start:'top top',end:'bottom bottom',scrub:1}});
     gsap.fromTo('#swingParallax',{y:0},{y:-16,ease:'none',scrollTrigger:{trigger:'#inicio',start:'top top',end:'bottom bottom',scrub:1.2}});
