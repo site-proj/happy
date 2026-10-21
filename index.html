@@ -36,7 +36,7 @@
     .hero-glow{position:absolute;z-index:1;inset:-10%;pointer-events:none;background:radial-gradient(ellipse at 60% 28%,rgba(234,207,156,.15),transparent 34%);mix-blend-mode:screen}
     .swing-parallax{position:absolute;z-index:3;inset:0;pointer-events:none;will-change:transform}
     .swing-motion{position:absolute;inset:0;transform-origin:55% 0;will-change:transform}
-    .swing-position{position:absolute;top:0;left:55%;width:min(33vw,53svh,560px);max-height:96svh;aspect-ratio:941/1672;transform:translateX(-50%);pointer-events:none}
+    .swing-position{position:absolute;top:0;left:55%;width:min(37vw,60svh,600px);height:min(94svh,1000px);aspect-ratio:941/1672;transform:translateX(-50%);pointer-events:none}
     .swing-position img{width:100%;height:100%;object-fit:contain;filter:brightness(1.12) contrast(1.05) drop-shadow(0 0 1.25px rgba(238,220,184,.72)) drop-shadow(16px 25px 24px #0006)}
     .rope-motion{position:absolute;z-index:6;inset:0;transform-origin:55% 0;pointer-events:none;will-change:transform}
     .rope-overlay{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
@@ -65,7 +65,7 @@
     .drink-copy h1{margin:20px 0 18px;font:600 clamp(45px,6.1vw,88px)/.98 'Manrope',Arial,sans-serif;letter-spacing:-.075em}
     .drink-copy h1 em{color:#e8cc9c;font-style:normal}
     .drink-copy p{max-width:380px;margin:0 0 28px;color:#f1eee5dc;font-size:15px;line-height:1.8}
-    .drink-art{position:absolute;z-index:4;top:50%;left:75%;width:min(43vw,50svh,650px);max-height:84svh;aspect-ratio:1122/1402;transform:translate(-50%,-50%);pointer-events:none}
+    .drink-art{position:absolute;z-index:4;top:50%;left:75%;width:min(44vw,62svh,650px);height:min(78svh,720px);aspect-ratio:1122/1402;transform:translate(-50%,-50%);pointer-events:none}
     .drink-shift,.drink-motion,.drink-motion img{width:100%;height:100%}
     .drink-shift{will-change:transform}
     .drink-motion{filter:drop-shadow(0 25px 22px #0005)}
@@ -96,7 +96,7 @@
       .hero-photo:after{background:linear-gradient(180deg,rgba(5,12,7,.34),rgba(5,12,7,.15) 38%,rgba(5,12,7,.68) 100%)}
       .swing-motion{transform-origin:66% 0}
       .rope-motion{transform-origin:66% 0}
-      .swing-position{left:50%;width:min(96vw,56svh,460px);max-height:98svh}
+      .swing-position{left:50%;width:min(96vw,56svh,460px);height:min(98svh,900px)}
       .rope-desktop{display:none}
       .rope-mobile{display:block}
       .hero-copy{top:clamp(180px,26svh,245px);left:0;right:0;width:auto;padding:0 18px;transform:none;align-items:center;text-align:center}
@@ -116,7 +116,7 @@
       .eyebrow{font-size:9px;letter-spacing:.22em}
       .drink-copy h1{max-width:440px;margin:13px auto 8px;font-size:clamp(43px,11vw,67px);line-height:.98}
       .drink-copy p{max-width:340px;margin:0 auto 15px;font-size:13px;line-height:1.6}
-      .drink-art{top:auto;left:50%;bottom:0;width:min(94vw,44svh);max-height:57svh;transform:translateX(-50%)}
+      .drink-art{top:auto;left:50%;bottom:0;width:min(94vw,44svh,420px);height:min(55svh,475px);transform:translateX(-50%)}
       .drink-motion{filter:drop-shadow(0 18px 18px #0005)}
       .scene-index{right:20px;bottom:16px;font-size:8px}
       .reservation{min-height:0;padding:76px 24px 28px}
@@ -129,7 +129,7 @@
       .hero-copy{top:70px}
       .hero-title{font-size:16px;margin:4px 0}
       .hero-note{margin:3px 0 8px}
-      .swing-position{width:min(96vw,58svh,420px)}
+      .swing-position{width:min(96vw,58svh,420px);height:min(98svh,900px)}
       .drink-copy{top:68px}
       .drink-copy h1{font-size:40px;margin:8px auto 5px}
       .drink-copy p{font-size:12px;margin-bottom:8px}
@@ -161,9 +161,9 @@
         </div>
         <div class="rope-motion" id="swingRope" aria-hidden="true">
           <svg class="rope-overlay rope-desktop" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path class="rope-under" d="M535 -8 C535 145 545 250 552 585 M550 -8 C550 150 565 258 572 598"/>
-            <path class="rope-core" d="M535 -8 C535 145 545 250 552 585 M550 -8 C550 150 565 258 572 598"/>
-            <path class="rope-highlight" d="M534 -8 C534 145 544 250 551 585 M549 -8 C549 150 564 258 571 598"/>
+            <path class="rope-under" d="M445 -8 C445 145 455 250 462 585 M460 -8 C460 150 475 258 482 598"/>
+            <path class="rope-core" d="M445 -8 C445 145 455 250 462 585 M460 -8 C460 150 475 258 482 598"/>
+            <path class="rope-highlight" d="M444 -8 C444 145 454 250 461 585 M459 -8 C459 150 474 258 481 598"/>
           </svg>
           <svg class="rope-overlay rope-mobile" viewBox="0 0 1000 1000" preserveAspectRatio="none">
             <path class="rope-under" d="M645 -8 C645 150 652 250 656 610 M660 -8 C660 150 668 252 674 625"/>
