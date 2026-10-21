@@ -30,15 +30,21 @@
 
     /* Opening: one full image, one editorial message, and the swing as the visual anchor. */
     .hero-track{position:relative;height:170svh;background:var(--forest)}
-    .hero{position:sticky;top:0;height:100svh;min-height:560px;overflow:hidden;isolation:isolate;background:#1b281d}
+    .hero{position:sticky;top:0;height:100svh;min-height:0;overflow:hidden;isolation:isolate;background:#1b281d}
     .hero-photo,.drink-photo{position:absolute;inset:-4%;background-image:url('assets/garden-fundo-original-sem-balanco.jpg');background-size:cover;background-position:54% 48%;transform:scale(1.04);will-change:transform}
     .hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,13,8,.86) 0%,rgba(7,14,9,.65) 38%,rgba(6,13,8,.2) 78%,rgba(6,13,8,.18) 100%),linear-gradient(0deg,rgba(4,10,6,.48),transparent 42%,rgba(4,10,6,.2))}
     .hero-glow{position:absolute;z-index:1;inset:-10%;pointer-events:none;background:radial-gradient(ellipse at 60% 28%,rgba(234,207,156,.15),transparent 34%);mix-blend-mode:screen}
-    .swing-position{position:absolute;z-index:3;top:0;left:59%;height:min(67svh,720px);width:min(37.7svh,407px);aspect-ratio:941/1672;transform:translateX(-50%);pointer-events:none;will-change:transform}
-    .swing-motion{width:100%;height:100%;transform-origin:50% 5%;will-change:transform}
-    .swing-motion img{width:100%;height:100%;object-fit:contain;filter:brightness(1.12) contrast(1.05) drop-shadow(0 0 1.25px rgba(238,220,184,.72)) drop-shadow(16px 25px 24px #0006)}
-    .swing-front{z-index:6;opacity:.38}
-    .hero-copy{position:absolute;z-index:5;top:50%;left:clamp(28px,8vw,132px);width:min(47vw,650px);transform:translateY(-43%);display:flex;flex-direction:column;align-items:flex-start}
+    .swing-parallax{position:absolute;z-index:3;inset:0;pointer-events:none;will-change:transform}
+    .swing-motion{position:absolute;inset:0;transform-origin:55% 0;will-change:transform}
+    .swing-position{position:absolute;top:0;left:55%;width:min(33vw,53svh,560px);max-height:96svh;aspect-ratio:941/1672;transform:translateX(-50%);pointer-events:none}
+    .swing-position img{width:100%;height:100%;object-fit:contain;filter:brightness(1.12) contrast(1.05) drop-shadow(0 0 1.25px rgba(238,220,184,.72)) drop-shadow(16px 25px 24px #0006)}
+    .rope-motion{position:absolute;z-index:6;inset:0;transform-origin:55% 0;pointer-events:none;will-change:transform}
+    .rope-overlay{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+    .rope-under{fill:none;stroke:#110e0c;stroke-width:8;stroke-linecap:round;filter:drop-shadow(0 2px 3px #000a)}
+    .rope-core{fill:none;stroke:#574331;stroke-width:4.5;stroke-linecap:round}
+    .rope-highlight{fill:none;stroke:#d7c09a;stroke-width:1.1;stroke-linecap:round;opacity:.58}
+    .rope-mobile{display:none}
+    .hero-copy{position:absolute;z-index:5;top:50%;left:clamp(28px,7vw,120px);width:min(50vw,680px);transform:translateY(-43%);display:flex;flex-direction:column;align-items:flex-start}
     .happy-logo{width:min(100%,610px);height:auto;margin:0 0 6px;filter:drop-shadow(0 8px 18px #0009)}
     .hero-title{max-width:590px;margin:15px 0 10px;font:800 clamp(18px,2.1vw,27px)/1.25 'Manrope',Arial,sans-serif;letter-spacing:-.045em;text-shadow:0 2px 18px #000a}
     .hero-title strong{color:var(--green)}
@@ -51,7 +57,7 @@
 
     /* Toast: a quiet second composition with the full transparent drink artwork. */
     .drink-track{position:relative;height:155svh;background:#131c15}
-    .drink-scene{position:sticky;top:0;height:100svh;min-height:560px;overflow:hidden;isolation:isolate;background:#1b271d}
+    .drink-scene{position:sticky;top:0;height:100svh;min-height:0;overflow:hidden;isolation:isolate;background:#1b271d}
     .drink-photo{background-position:65% 54%;transform:scale(1.08)}
     .drink-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,15,9,.88) 0%,rgba(8,16,10,.66) 38%,rgba(7,13,8,.28) 78%),linear-gradient(0deg,rgba(4,10,6,.55),transparent 52%)}
     .drink-copy{position:absolute;z-index:5;top:50%;left:clamp(28px,9vw,145px);width:min(44vw,540px);transform:translateY(-40%)}
@@ -59,9 +65,10 @@
     .drink-copy h1{margin:20px 0 18px;font:600 clamp(45px,6.1vw,88px)/.98 'Manrope',Arial,sans-serif;letter-spacing:-.075em}
     .drink-copy h1 em{color:#e8cc9c;font-style:normal}
     .drink-copy p{max-width:380px;margin:0 0 28px;color:#f1eee5dc;font-size:15px;line-height:1.8}
-    .drink-art{position:absolute;z-index:4;top:50%;left:73%;height:min(82.4svh,812px);width:min(66svh,650px);aspect-ratio:1122/1402;transform:translate(-50%,-50%);pointer-events:none;will-change:transform}
-    .drink-motion,.drink-motion img{width:100%;height:100%}
-    .drink-motion{transform-origin:50% 64%;filter:drop-shadow(0 25px 22px #0005);will-change:transform}
+    .drink-art{position:absolute;z-index:4;top:50%;left:75%;width:min(43vw,50svh,650px);max-height:84svh;aspect-ratio:1122/1402;transform:translate(-50%,-50%);pointer-events:none}
+    .drink-shift,.drink-motion,.drink-motion img{width:100%;height:100%}
+    .drink-shift{will-change:transform}
+    .drink-motion{filter:drop-shadow(0 25px 22px #0005)}
     .drink-motion img{object-fit:contain}
     .scene-index{position:absolute;z-index:6;right:clamp(28px,7vw,100px);bottom:32px;color:#f3efe59c;font-size:9px;letter-spacing:.24em;text-transform:uppercase}
 
@@ -84,12 +91,15 @@
       .nav-mark{font-size:9px;letter-spacing:.18em}
       .nav-cta{padding:11px 15px;font-size:9px}
       .hero-track{height:142svh}
-      .hero{min-height:500px}
+      .hero{min-height:0}
       .hero-photo{background-position:52% center}
       .hero-photo:after{background:linear-gradient(180deg,rgba(5,12,7,.34),rgba(5,12,7,.15) 38%,rgba(5,12,7,.68) 100%)}
-      .swing-position{top:0;left:50%;bottom:auto;height:min(76svh,620px);width:min(42.8svh,349px);aspect-ratio:941/1672;transform:translateX(-50%)}
-      .swing-front{opacity:.24}
-      .hero-copy{top:clamp(80px,10svh,112px);left:0;right:0;width:auto;padding:0 18px;transform:none;align-items:center;text-align:center}
+      .swing-motion{transform-origin:66% 0}
+      .rope-motion{transform-origin:66% 0}
+      .swing-position{left:50%;width:min(96vw,56svh,460px);max-height:98svh}
+      .rope-desktop{display:none}
+      .rope-mobile{display:block}
+      .hero-copy{top:clamp(180px,26svh,245px);left:0;right:0;width:auto;padding:0 18px;transform:none;align-items:center;text-align:center}
       .happy-logo{width:min(94vw,480px);margin-bottom:2px;filter:drop-shadow(0 2px 6px #000) drop-shadow(0 9px 18px #000b)}
       .hero-title{max-width:350px;margin:7px 0 7px;font-size:clamp(17px,4.5vw,21px);line-height:1.2}
       .hero-detail{font-size:9px;letter-spacing:.13em;line-height:1.6}
@@ -99,14 +109,14 @@
       .scroll-cue{gap:6px}
       .scroll-cue:after{height:18px}
       .drink-track{height:140svh}
-      .drink-scene{min-height:500px}
+      .drink-scene{min-height:0}
       .drink-photo{background-position:58% center}
       .drink-photo:after{background:linear-gradient(180deg,rgba(5,12,7,.56),rgba(5,12,7,.12) 42%,rgba(5,12,7,.48))}
       .drink-copy{z-index:6;top:max(86px,10svh);left:0;right:0;width:auto;padding:0 20px;transform:none;text-align:center}
       .eyebrow{font-size:9px;letter-spacing:.22em}
       .drink-copy h1{max-width:440px;margin:13px auto 8px;font-size:clamp(43px,11vw,67px);line-height:.98}
       .drink-copy p{max-width:340px;margin:0 auto 15px;font-size:13px;line-height:1.6}
-      .drink-art{top:auto;left:50%;bottom:0;height:min(117.5vw,55svh);width:min(94vw,44svh);aspect-ratio:1122/1402;transform:translateX(-50%)}
+      .drink-art{top:auto;left:50%;bottom:0;width:min(94vw,44svh);max-height:57svh;transform:translateX(-50%)}
       .drink-motion{filter:drop-shadow(0 18px 18px #0005)}
       .scene-index{right:20px;bottom:16px;font-size:8px}
       .reservation{min-height:0;padding:76px 24px 28px}
@@ -119,7 +129,7 @@
       .hero-copy{top:70px}
       .hero-title{font-size:16px;margin:4px 0}
       .hero-note{margin:3px 0 8px}
-      .swing-position{height:min(70svh,440px);width:min(39.4svh,248px)}
+      .swing-position{width:min(96vw,58svh,420px)}
       .drink-copy{top:68px}
       .drink-copy h1{font-size:40px;margin:8px auto 5px}
       .drink-copy p{font-size:12px;margin-bottom:8px}
@@ -144,8 +154,23 @@
       <div class="hero">
         <div class="hero-photo" id="heroPhoto" aria-hidden="true"></div>
         <div class="hero-glow" aria-hidden="true"></div>
-        <div class="swing-position" id="swingBack" aria-hidden="true"><div class="swing-motion" id="swingMotion"><img src="assets/balanco-recortado.png" alt="" fetchpriority="high"></div></div>
-        <div class="swing-position swing-front" id="swingFront" aria-hidden="true"><div class="swing-motion" id="swingFrontMotion"><img src="assets/balanco-recortado.png" alt="" fetchpriority="high"></div></div>
+        <div class="swing-parallax" id="swingParallax" aria-hidden="true">
+          <div class="swing-motion" id="swingMotion">
+            <div class="swing-position"><img src="assets/balanco-recortado.png" alt="" fetchpriority="high"></div>
+          </div>
+        </div>
+        <div class="rope-motion" id="swingRope" aria-hidden="true">
+          <svg class="rope-overlay rope-desktop" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            <path class="rope-under" d="M535 -8 C535 145 545 250 552 585 M550 -8 C550 150 565 258 572 598"/>
+            <path class="rope-core" d="M535 -8 C535 145 545 250 552 585 M550 -8 C550 150 565 258 572 598"/>
+            <path class="rope-highlight" d="M534 -8 C534 145 544 250 551 585 M549 -8 C549 150 564 258 571 598"/>
+          </svg>
+          <svg class="rope-overlay rope-mobile" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            <path class="rope-under" d="M645 -8 C645 150 652 250 656 610 M660 -8 C660 150 668 252 674 625"/>
+            <path class="rope-core" d="M645 -8 C645 150 652 250 656 610 M660 -8 C660 150 668 252 674 625"/>
+            <path class="rope-highlight" d="M644 -8 C644 150 651 250 655 610 M659 -8 C659 150 667 252 673 625"/>
+          </svg>
+        </div>
         <div class="hero-copy" id="heroCopy">
           <img class="happy-logo" src="assets/happy-hour-logo.png" alt="Happy Hour" width="2048" height="921" fetchpriority="high">
           <p class="hero-title">Venha celebrar com o nosso <strong>Happy Hour!</strong></p>
@@ -159,7 +184,7 @@
     <section class="drink-track" id="experiencia" aria-label="A experiência Garden">
       <div class="drink-scene">
         <div class="drink-photo" id="drinkPhoto" aria-hidden="true"></div>
-        <div class="drink-art" id="drinkArt" aria-hidden="true"><div class="drink-motion" id="drinkMotion"><img src="assets/brinde-sem-marca.png" alt="" loading="lazy" width="1122" height="1402"></div></div>
+        <div class="drink-art" id="drinkArt" aria-hidden="true"><div class="drink-shift" id="drinkShift"><div class="drink-motion"><img src="assets/brinde-sem-marca.png" alt="" loading="lazy" width="1122" height="1402"></div></div></div>
         <div class="drink-copy" id="drinkCopy">
           <span class="eyebrow">A experiência Garden</span>
           <h1>Um brinde aos<br><em>bons momentos.</em></h1>
