@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/garden-fundo-original-sem-balanco.jpg">
-  <link rel="preload" as="image" href="assets/balanco-recortado.png">
+  <link rel="preload" as="image" href="assets/balanco-recortado.png?v=corda-longa-20261021">
   <style>
     :root{--forest:#111a14;--cream:#f3efe5;--gold:#d5bb8e;--green:#79d58a;--muted:#d0d1c8;--ease:cubic-bezier(.22,1,.36,1)}
     *{box-sizing:border-box}
@@ -37,13 +37,10 @@
     .swing-parallax{position:absolute;z-index:3;inset:0;pointer-events:none;will-change:transform}
     .swing-motion{position:absolute;inset:0;transform-origin:55% 0;will-change:transform}
     .swing-position{position:absolute;top:0;left:55%;width:min(37vw,60svh,600px);height:min(94svh,1000px);aspect-ratio:941/1672;transform:translateX(-50%);pointer-events:none}
-    .swing-position img{width:100%;height:100%;object-fit:contain;filter:brightness(1.12) contrast(1.05) drop-shadow(0 0 1.25px rgba(238,220,184,.72)) drop-shadow(16px 25px 24px #0006)}
+    .swing-position img{width:100%;height:100%;object-fit:contain;filter:brightness(1.12) contrast(1.05) drop-shadow(16px 25px 24px #0006)}
     .rope-motion{position:absolute;z-index:6;inset:0;transform-origin:55% 0;pointer-events:none;will-change:transform}
-    .rope-overlay{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
-    .rope-under{fill:none;stroke:#110e0c;stroke-width:2.8;stroke-linecap:round;filter:drop-shadow(0 2px 3px #000a)}
-    .rope-core{fill:none;stroke:#574331;stroke-width:1.25;stroke-linecap:round}
-    .rope-highlight{fill:none;stroke:#d7c09a;stroke-width:.4;stroke-linecap:round;opacity:.58}
-    .rope-mobile{display:none}
+    .rope-position{position:absolute;top:0;left:55%;width:min(37vw,60svh,600px);height:min(94svh,1000px);transform:translateX(-50%);pointer-events:none}
+    .rope-position img{width:100%;height:100%;object-fit:contain;clip-path:inset(0 42% 68% 43%)}
     .hero-copy{position:absolute;z-index:5;top:50%;left:clamp(28px,7vw,120px);width:min(50vw,680px);transform:translateY(-43%);display:flex;flex-direction:column;align-items:flex-start}
     .happy-logo{width:min(100%,610px);height:auto;margin:0 0 6px;filter:drop-shadow(0 8px 18px #0009)}
     .hero-title{max-width:590px;margin:15px 0 10px;font:800 clamp(18px,2.1vw,27px)/1.25 'Manrope',Arial,sans-serif;letter-spacing:-.045em;text-shadow:0 2px 18px #000a}
@@ -97,8 +94,7 @@
       .swing-motion{transform-origin:66% 0}
       .rope-motion{transform-origin:66% 0}
       .swing-position{left:50%;width:min(96vw,56svh,460px);height:min(98svh,900px)}
-      .rope-desktop{display:none}
-      .rope-mobile{display:block}
+      .rope-position{left:50%;width:min(96vw,56svh,460px);height:min(98svh,900px)}
       .hero-copy{top:clamp(180px,26svh,245px);left:0;right:0;width:auto;padding:0 18px;transform:none;align-items:center;text-align:center}
       .happy-logo{width:min(94vw,480px);margin-bottom:2px;filter:drop-shadow(0 2px 6px #000) drop-shadow(0 9px 18px #000b)}
       .hero-title{max-width:350px;margin:7px 0 7px;font-size:clamp(17px,4.5vw,21px);line-height:1.2}
@@ -130,6 +126,7 @@
       .hero-title{font-size:16px;margin:4px 0}
       .hero-note{margin:3px 0 8px}
       .swing-position{width:min(96vw,58svh,420px);height:min(98svh,900px)}
+      .rope-position{width:min(96vw,58svh,420px);height:min(98svh,900px)}
       .drink-copy{top:68px}
       .drink-copy h1{font-size:40px;margin:8px auto 5px}
       .drink-copy p{font-size:12px;margin-bottom:8px}
@@ -156,20 +153,11 @@
         <div class="hero-glow" aria-hidden="true"></div>
         <div class="swing-parallax" id="swingParallax" aria-hidden="true">
           <div class="swing-motion" id="swingMotion">
-            <div class="swing-position"><img src="assets/balanco-recortado.png" alt="" fetchpriority="high"></div>
+            <div class="swing-position"><img src="assets/balanco-recortado.png?v=corda-longa-20261021" alt="" fetchpriority="high"></div>
           </div>
         </div>
         <div class="rope-motion" id="swingRope" aria-hidden="true">
-          <svg class="rope-overlay rope-desktop" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path class="rope-under" d="M470 -8 C470 145 478 250 484 585 M480 -8 C480 150 489 258 494 598"/>
-            <path class="rope-core" d="M470 -8 C470 145 478 250 484 585 M480 -8 C480 150 489 258 494 598"/>
-            <path class="rope-highlight" d="M469 -8 C469 145 477 250 483 585 M479 -8 C479 150 488 258 493 598"/>
-          </svg>
-          <svg class="rope-overlay rope-mobile" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path class="rope-under" d="M645 -8 C645 150 652 250 656 610 M655 -8 C655 150 663 252 669 625"/>
-            <path class="rope-core" d="M645 -8 C645 150 652 250 656 610 M655 -8 C655 150 663 252 669 625"/>
-            <path class="rope-highlight" d="M644 -8 C644 150 651 250 655 610 M654 -8 C654 150 662 252 668 625"/>
-          </svg>
+          <div class="rope-position"><img src="assets/balanco-recortado.png?v=corda-longa-20261021" alt=""></div>
         </div>
         <div class="hero-copy" id="heroCopy">
           <img class="happy-logo" src="assets/happy-hour-logo.png" alt="Happy Hour" width="2048" height="921" fetchpriority="high">
