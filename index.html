@@ -46,12 +46,13 @@
     .rope-core{fill:none;stroke:#574331;stroke-width:1.25;stroke-linecap:round}
     .rope-highlight{fill:none;stroke:#d7c09a;stroke-width:.4;stroke-linecap:round;opacity:.58}
     .rope-mobile{display:none}
-    .hero-copy{position:absolute;z-index:5;top:22%;left:clamp(28px,7vw,120px);width:min(50vw,680px);transform:translateY(-43%);display:flex;flex-direction:column;align-items:flex-start}
+    .hero-copy{position:absolute;z-index:5;top:18%;left:clamp(28px,7vw,120px);width:min(50vw,680px);transform:translateY(-43%);display:flex;flex-direction:column;align-items:flex-start}
     .happy-logo{width:min(100%,610px);height:auto;margin:0 0 6px;filter:drop-shadow(0 8px 18px #0009);transform:translateX(8.5vw)}
-    .hero-title{max-width:590px;margin:15px 0 10px;font:800 clamp(18px,2.1vw,27px)/1.25 'Manrope',Arial,sans-serif;letter-spacing:-.045em;text-shadow:0 2px 18px #000a}
+    .hero-info{max-width:590px;padding:16px 20px 17px;border-left:2px solid var(--gold);background:linear-gradient(100deg,rgba(6,13,8,.88),rgba(6,13,8,.68));box-shadow:0 12px 30px #0003;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
+    .hero-title{max-width:550px;margin:0 0 9px;font:800 clamp(19px,2.25vw,29px)/1.25 'Manrope',Arial,sans-serif;letter-spacing:-.04em;text-shadow:0 2px 12px #000c}
     .hero-title strong{color:var(--green)}
-    .hero-detail{margin:0;color:#f5f0e6;font-size:11px;font-weight:700;letter-spacing:.2em;line-height:1.7;text-transform:uppercase;text-shadow:0 2px 15px #000b}
-    .hero-note{margin:9px 0 22px;color:#e8e5dc;font-size:13px;line-height:1.6;text-shadow:0 2px 14px #000b}
+    .hero-detail{margin:0;color:#fff;font-size:11px;font-weight:800;letter-spacing:.18em;line-height:1.75;text-transform:uppercase;text-shadow:0 2px 10px #000c}
+    .hero-note{margin:7px 0 16px;color:#f4f1e9;font-size:14px;line-height:1.65;text-shadow:0 2px 10px #000c}
     .button{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:14px 20px;border:1px solid #f3efe590;border-radius:3px;background:#111a14a8;backdrop-filter:blur(10px);font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;transition:background .25s,color .25s,border-color .25s,transform .25s}
     .hero-foot{position:absolute;z-index:7;left:clamp(28px,8vw,132px);right:clamp(28px,8vw,132px);bottom:clamp(24px,4vh,42px);display:flex;align-items:flex-end;justify-content:space-between;color:#f3efe5c4;font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}
     .scroll-cue{display:grid;justify-items:center;gap:10px}
@@ -100,11 +101,12 @@
       .rope-motion{transform-origin:50% 0}
       .swing-position{left:50%;width:min(100vw,60svh,480px);height:min(100svh,900px)}
       .rope-position{left:50%;width:min(100vw,60svh,480px);height:min(120svh,1050px)}
-      .hero-copy{top:clamp(180px,26svh,245px);left:0;right:0;width:auto;padding:0 18px;transform:none;align-items:center;text-align:center}
+      .hero-copy{top:clamp(160px,23svh,215px);left:0;right:0;width:auto;padding:0 18px;transform:none;align-items:center;text-align:center}
       .happy-logo{width:min(94vw,480px);margin-bottom:2px;filter:drop-shadow(0 2px 6px #000) drop-shadow(0 9px 18px #000b);transform:none}
-      .hero-title{max-width:350px;margin:7px 0 7px;font-size:clamp(17px,4.5vw,21px);line-height:1.2}
-      .hero-detail{font-size:9px;letter-spacing:.13em;line-height:1.6}
-      .hero-note{margin:5px 0 13px;font-size:11px}
+      .hero-info{width:min(100%,440px);padding:12px 14px 14px;text-align:center;border-left:0;border-top:2px solid var(--gold);background:linear-gradient(180deg,rgba(6,13,8,.88),rgba(6,13,8,.72));}
+      .hero-title{max-width:390px;margin:0 auto 7px;font-size:clamp(18px,4.7vw,22px);line-height:1.25}
+      .hero-detail{font-size:9px;letter-spacing:.15em;line-height:1.7}
+      .hero-note{margin:5px 0 11px;font-size:12px;line-height:1.55}
       .button{min-height:44px;padding:12px 16px;font-size:9px}
       .hero-foot{left:22px;right:22px;bottom:22px;font-size:8px;letter-spacing:.15em}
       .scroll-cue{gap:6px}
@@ -166,10 +168,12 @@
         </div>
         <div class="hero-copy" id="heroCopy">
           <img class="happy-logo" src="assets/happy-hour-logo.png" alt="Happy Hour" width="2048" height="921" fetchpriority="high">
-          <p class="hero-title">Venha celebrar com o nosso <strong>Happy Hour!</strong></p>
-          <p class="hero-detail">Drinks · Petiscos · Chopp · e muito mais</p>
-          <p class="hero-note">Couvert artístico a partir das 20h.</p>
-          <a class="button" href="#reservar">Reservar minha mesa <span aria-hidden="true">↗</span></a>
+          <div class="hero-info">
+            <p class="hero-title">Venha celebrar com o nosso <strong>Happy Hour!</strong></p>
+            <p class="hero-detail">Drinks · Petiscos · Chopp · e muito mais</p>
+            <p class="hero-note">Couvert artístico a partir das 20h.</p>
+            <a class="button" href="#reservar">Reservar minha mesa <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
         <div class="hero-foot"><span>Um jardim para bons encontros</span><span class="scroll-cue">Role para descobrir</span></div>
       </div>
