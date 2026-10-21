@@ -40,9 +40,9 @@
     .swing-position img{width:100%;height:100%;object-fit:contain;filter:brightness(1.12) contrast(1.05) drop-shadow(0 0 1.25px rgba(238,220,184,.72)) drop-shadow(16px 25px 24px #0006)}
     .rope-motion{position:absolute;z-index:6;inset:0;transform-origin:55% 0;pointer-events:none;will-change:transform}
     .rope-overlay{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
-    .rope-under{fill:none;stroke:#110e0c;stroke-width:8;stroke-linecap:round;filter:drop-shadow(0 2px 3px #000a)}
-    .rope-core{fill:none;stroke:#574331;stroke-width:4.5;stroke-linecap:round}
-    .rope-highlight{fill:none;stroke:#d7c09a;stroke-width:1.1;stroke-linecap:round;opacity:.58}
+    .rope-under{fill:none;stroke:#110e0c;stroke-width:4;stroke-linecap:round;filter:drop-shadow(0 2px 3px #000a)}
+    .rope-core{fill:none;stroke:#574331;stroke-width:2.1;stroke-linecap:round}
+    .rope-highlight{fill:none;stroke:#d7c09a;stroke-width:.55;stroke-linecap:round;opacity:.58}
     .rope-mobile{display:none}
     .hero-copy{position:absolute;z-index:5;top:50%;left:clamp(28px,7vw,120px);width:min(50vw,680px);transform:translateY(-43%);display:flex;flex-direction:column;align-items:flex-start}
     .happy-logo{width:min(100%,610px);height:auto;margin:0 0 6px;filter:drop-shadow(0 8px 18px #0009)}
@@ -161,14 +161,14 @@
         </div>
         <div class="rope-motion" id="swingRope" aria-hidden="true">
           <svg class="rope-overlay rope-desktop" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path class="rope-under" d="M445 -8 C445 145 455 250 462 585 M460 -8 C460 150 475 258 482 598"/>
-            <path class="rope-core" d="M445 -8 C445 145 455 250 462 585 M460 -8 C460 150 475 258 482 598"/>
-            <path class="rope-highlight" d="M444 -8 C444 145 454 250 461 585 M459 -8 C459 150 474 258 481 598"/>
+            <path class="rope-under" d="M470 -8 C470 145 478 250 484 585 M480 -8 C480 150 489 258 494 598"/>
+            <path class="rope-core" d="M470 -8 C470 145 478 250 484 585 M480 -8 C480 150 489 258 494 598"/>
+            <path class="rope-highlight" d="M469 -8 C469 145 477 250 483 585 M479 -8 C479 150 488 258 493 598"/>
           </svg>
           <svg class="rope-overlay rope-mobile" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path class="rope-under" d="M645 -8 C645 150 652 250 656 610 M660 -8 C660 150 668 252 674 625"/>
-            <path class="rope-core" d="M645 -8 C645 150 652 250 656 610 M660 -8 C660 150 668 252 674 625"/>
-            <path class="rope-highlight" d="M644 -8 C644 150 651 250 655 610 M659 -8 C659 150 667 252 673 625"/>
+            <path class="rope-under" d="M645 -8 C645 150 652 250 656 610 M655 -8 C655 150 663 252 669 625"/>
+            <path class="rope-core" d="M645 -8 C645 150 652 250 656 610 M655 -8 C655 150 663 252 669 625"/>
+            <path class="rope-highlight" d="M644 -8 C644 150 651 250 655 610 M654 -8 C654 150 662 252 668 625"/>
           </svg>
         </div>
         <div class="hero-copy" id="heroCopy">
